@@ -1,10 +1,11 @@
+
 <p align="center">
   <a>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png" alt="Logo" width="200" height="200">
   </a>
 
   <p align="center">
-    El momento de entender porque las URLs empiezan con HTTP
+    The moment you finally understand why URLs start with HTTP
     <br />
 	</p>
 </p>
@@ -16,38 +17,36 @@
   <img src="https://img.shields.io/badge/Gcc-00FF00">
 </p>
 
-## &#x1F4CC; Index 
-- [What is webserver?](#-what-is-inception)
-- [Características](#-caracteristicas)
-- [Requisitos](#-requisitos)
-- [Usage](#-usage)
+## ✨ What is webserv?
+`webserv` is an HTTP server built from scratch in C++98. It’s made to work with real browsers and aims to support much of the HTTP/1.1 standard. This project tests your understanding of sockets, process management, server configuration, and handling HTTP requests.
 
-## &#x2728; What is webserver?
-`webserv` es un servidor HTTP escrito desde cero en C++98. Está diseñado para ser compatible con navegadores reales y cumplir con gran parte del estándar HTTP 1.1. Este proyecto pone a prueba tu comprensión sobre sockets, manejo de procesos, configuración de servidores y procesamiento de peticiones HTTP.
+## Features
+- Handles multiple connections using `epoll()`.
+- Non-blocking I/O.
+- Works with real-world browsers.
+- Supports HTTP methods: `GET`, `POST`, `DELETE`.
+- Serves static files.
+- File upload support.
+- CGI support (e.g., PHP, Python).
+- Multiple ports and virtual servers.
+- NGINX-style configuration file.
+- Default error pages.
 
-## Características
-- Manejo de múltiples conexiones con `poll()` (o `select()`, `epoll()`, `kqueue()`).
-- No-blocking I/O.
-- Compatible con navegadores reales.
-- Soporte para métodos HTTP: `GET`, `POST`, `DELETE`.
-- Servir archivos estáticos.
-- Soporte para uploads.
-- Soporte para CGI (ej. PHP, Python).
-- Múltiples puertos y servidores virtuales.
-- Archivos de configuración estilo NGINX.
-- Manejo de errores con páginas por defecto.
+## Requirements
 
-## Requisitos
+- C++98 (compiled with `-Wall -Wextra -Werror -std=c++98`)
+- No Boost or external libraries allowed.
+- Must be 100% stable — no crashes allowed under any condition.
+- Compatible with Linux and macOS (with some platform-specific constraints).
 
-- C++98 (compilación con `-Wall -Wextra -Werror -std=c++98`)
-- No se permite usar Boost ni librerías externas.
-- Código 100% estable: no puede crashear bajo ninguna condición.
-- Compatible con Linux y macOS (con restricciones específicas).
+## 💻 Usage
+
+Use `make` to compile the project.
+
+Run it with:
+
+```bash
+./webserv ./conf/server.conf
 
 
-## &#x1F4BB; Usage
-
-`make` to compile the project.
-
-./webserv [archivo_de_configuración]
 
